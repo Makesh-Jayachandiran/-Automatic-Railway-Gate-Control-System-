@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char train[20];
+    printf("Automatic Railway Gate Control System Simulation\n");
+    printf("Type 'approach' when train is coming,\n");
+    printf("Type 'pass' when train has passed,\n");
+    printf("Type 'exit' to stop the program.\n");
+    while (1) {
+        printf("\nEnter Train Status: ");
+        scanf("%s", train);   // reads single word safely
+        if (strcmp(train, "approach") == 0) {
+            printf("Train Approaching... Gate is CLOSING\n");
+        }
+        else if (strcmp(train, "pass") == 0) {
+            printf("Train Passed... Gate is OPEN\n");
+        }
+        else if (strcmp(train, "exit") == 0) {
+            printf("System shutting down...\n");
+            break;
+        }
+        else {
+            printf("Invalid input! Use 'approach', 'pass' or 'exit'.\n");
+        }
+    }
+    return 0;
+}
